@@ -1,9 +1,9 @@
 {
   "domain": "tahoma",
   "name": "Tahoma",
-  "documentation": "https://www.home-assistant.io/components/tahoma",
+  "documentation": "https://www.home-assistant.io/integrations/tahoma",
   "requirements": [
-    "tahoma-api==0.0.14"
+    "tahoma-api==0.0.16"
   ],
   "dependencies": [],
   "codeowners": [

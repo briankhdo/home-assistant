@@ -7,12 +7,13 @@ automatic sensor creation.
 
 from homeassistant.components.rflink import (
     CONF_RECONNECT_INTERVAL,
-    TMP_ENTITY,
     DATA_ENTITY_LOOKUP,
     EVENT_KEY_COMMAND,
     EVENT_KEY_SENSOR,
+    TMP_ENTITY,
 )
 from homeassistant.const import STATE_UNKNOWN
+
 from tests.components.rflink.test_init import mock_rflink
 
 DOMAIN = "sensor"
@@ -114,8 +115,8 @@ async def test_entity_availability(hass, monkeypatch):
     assert hass.states.get("sensor.test").state == STATE_UNKNOWN
 
 
-async def test_aliasses(hass, monkeypatch):
-    """Validate the response to sensor's alias (with aliasses)."""
+async def test_aliases(hass, monkeypatch):
+    """Validate the response to sensor's alias (with aliases)."""
     config = {
         "rflink": {"port": "/dev/ttyABC0"},
         DOMAIN: {
@@ -124,7 +125,7 @@ async def test_aliasses(hass, monkeypatch):
                 "test_02": {
                     "name": "test_02",
                     "sensor_type": "humidity",
-                    "aliasses": ["test_alias_02_0"],
+                    "aliases": ["test_alias_02_0"],
                 }
             },
         },
